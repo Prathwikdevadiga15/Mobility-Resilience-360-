@@ -40,10 +40,10 @@ export function AppProvider({ children }) {
       setError(null);
     } catch (err) {
       console.error('Failed to fetch reports:', err);
-      setReports(sampleReports);
-      setError(err.message);
+      setReports([]);
     }
-  }, []);
+    }
+    , []);
 
   // Fetch stats from API
   const fetchStats = useCallback(async () => {
